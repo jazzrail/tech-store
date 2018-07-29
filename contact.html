@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Tech Store: Contact</title>
+  <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+
 </head>
 
 <body>
@@ -26,13 +30,14 @@
           <a href="index.html">home</a>
         </li>
         <li>
-          <a href="#">shop</a>
+          <a href="product-detail.html">shop</a>
         </li>
         <li>
           <a href="contact.html">contact</a>
         </li>
       </ul>
     </nav>
+    <input type="search" placeholder="search...">
   </header>
 
   <!-- sidebar -->
@@ -70,18 +75,91 @@
     <h2>Contact Us:</h2>
     <form action="" method="">
       <div>
-        Name:
-        <input type="text" placeholder="Enter your name">
+        <label for="name">Name:</label>
+        <input type="text" placeholder="Enter your name" id="name" name="name">
       </div>
       <div>
-        Email:
-        <input type="email" placeholder="Enter your email">
+        <label for="email">Email:</label>
+        <input type="email" placeholder="Enter your email" id="email" name="email">
       </div>
       <div>
-        Message:
-        <textarea name="" id="" cols="30" rows="5"></textarea>
+        <label for="message">Message:</label>
+        <textarea cols="30" rows="5" id="message" name="message"></textarea>
       </div>
+
+      <!-- <div>
+        <label for="subject">Subject:</label>
+        <select id="select">
+          <optgroup label="Product issues">
+            <option value="returns">Returns</option>
+            <option value="faulty_item">Faulty item</option>
+          </optgroup>
+          <optgroup label="Delivery">
+            <option value="delivery">Delivery info</option>
+            <option value="order_tracking">Tracking my order</option>
+          </optgroup>
+          <optgroup label="Other">
+            <option value="advice">Advice</option>
+            <option value="other">Other</option>
+          </optgroup>
+        </select>
+      </div> -->
+      <!--  The following datalist is not supported by all browsers -->
+
+      <div>
+        <label for="subject">Subject:</label>
+        <input type="text" list="subjects" id="subject" placeholder="Enter your subject">
+        <datalist id="subjects">
+          <option value="returns">
+            <option value="faulty item">
+              <option value="delivery">
+                <option value="order tracking">
+                  <option value="advice">
+                    <option value="other">
+        </datalist>
+      </div>
+
+      <div>
+        <p>Subscribe to future offers by:</p>
+        <label for="newsletter">Newsletter</label>
+        <input type="checkbox" id="newsletter" name="subscribe" value="newsletter">
+        <label for="email">Email</label>
+        <input type="checkbox" id="email" name="subscribe" value="email">
+        <label for="post">Post</label>
+        <input type="checkbox" id="post" name="subscribe" value="post">
+      </div>
+
+      <div>
+        <p>How would you like us to resond?</p>
+        <label for="phoneResponse">Phone</label>
+        <input type="radio" id="phoneResponse" name="response" value="phone">
+        <label for="emailResponse">Email</label>
+        <input type="radio" id="emailResponse" name="response" value="email">
+      </div>
+
+      <div>
+        <input type="submit">
+        <input type="reset">
+        <!-- <button type="submit">Send it</button> -->
+      </div>
+
     </form>
+
+    <!-- <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCQerIbZ3A1f7FWi3F7ON8A3VASI_r5dRQ
+        &q=Peace+Gardens+Sheffield+UK" allowfullscreen>
+    </iframe> -->
+
+    <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+    <div style='overflow:hidden;height:440px;width:700px;'>
+      <div id='gmap_canvas' style='height:440px;width:700px;'></div>
+      <style>
+        #gmap_canvas img {
+          max-width: none !important;
+          background: none !important
+        }
+      </style>
+    </div>
+    <script type='text/javascript'>function init_map() { var myOptions = { zoom: 15, center: new google.maps.LatLng(53.38112899999999, -1.47008500000004), mapTypeId: google.maps.MapTypeId.ROADMAP }; map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions); marker = new google.maps.Marker({ map: map, position: new google.maps.LatLng(53.38112899999999, -1.47008500000004) }); infowindow = new google.maps.InfoWindow({ content: '<strong>Peace Gardens</strong><br>Sheffield, United Kingdom<br>' }); google.maps.event.addListener(marker, 'click', function () { infowindow.open(map, marker); }); infowindow.open(map, marker); } google.maps.event.addDomListener(window, 'load', init_map);</script>
 
 
 

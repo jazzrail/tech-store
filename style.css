@@ -1,0 +1,30 @@
+/* Colors:
+html: 
+background: #f7f7f7;
+body: 
+background: white;
+Header/Footer: 
+backgound #333a40;
+color: white;
+ */
+
+/* Fonts:
+
+*/
+
+html {
+  background: #f7f7f7;
+}
+
+body {
+  background: white;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: 'Barlow', sans-serif;
+}
+
+header,
+footer {
+  background: #333a40;
+  color: white;
+}
